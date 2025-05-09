@@ -3,13 +3,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableCell?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.control.Label?>
-<?import javafx.geometry.Pos?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5DEB3; -fx-font-family: 'Helvetica'">
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5DEB3; -fx-font-family: 'Times New Roman'">
 
     <!-- Title -->
     <Text text="Gestione Ricambi e Percentuali di Vendita" style="-fx-font-size: 30px; -fx-fill: #32CD32; -fx-font-weight: bold"/>
