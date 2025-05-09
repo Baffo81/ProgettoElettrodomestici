@@ -142,7 +142,7 @@ public class CustomerController implements Initializable {
 
     @FXML
     private void showMenuAdministrator() throws IOException { // switches the interface to the login
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/elettrodomestici/brunasso_vittorio_elettrodomestici/amministratore_menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("amministratore_menu.fxml"));
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         Stage stage = (Stage) loginUsername.getScene().getWindow();
@@ -155,7 +155,7 @@ public class CustomerController implements Initializable {
 
     @FXML
     private void showInterfaceClient() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/elettrodomestici/brunasso_vittorio_elettrodomestici/client_view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("client_view.fxml"));
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         Stage stage = (Stage) loginUsername.getScene().getWindow();

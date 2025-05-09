@@ -1,5 +1,6 @@
 package org.brunasso_elettrodomestici;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,12 +19,28 @@ import java.util.ResourceBundle;
 
 
 public class AdminController implements Initializable {
+
+
+    public TextField productCode,
+    productName,
+    productDescription,
+    productPrice,
+    productMarca,
+    productCategoria,
+    productQuantity,
+    productSale,
+    productFornitore;
+
+    public Text addProductError;
+
     @FXML
     Button VisualizzaAggiungi,
-            VisualizzaScorteRicambiPercentualeVendita;
+            VisualizzaScorteRicambiPercentualeVendita,
+            addProductButton;
+
     @FXML
     private void VisualizzaMenu() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/elettrodomestici/brunasso_vittorio_elettrodomestici/amministratore_menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("amministratore_menu.fxml"));
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         Stage stage = (Stage) VisualizzaAggiungi.getScene().getWindow();
@@ -53,5 +70,8 @@ public class AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    public void addProduct() {
     }
 }

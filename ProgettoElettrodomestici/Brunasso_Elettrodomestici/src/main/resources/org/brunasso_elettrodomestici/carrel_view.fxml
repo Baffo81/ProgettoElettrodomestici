@@ -5,29 +5,40 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.ClientController">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.ClientController"
+      alignment="CENTER" spacing="20" style="-fx-background-color: #F7F9F9; -fx-font-family: 'Arial'; -fx-padding: 20;">
+
+    <!-- Titolo -->
+    <Label text="Carrello" style="-fx-font-size: 36px; -fx-text-fill: #2E86C1; -fx-font-weight: bold;" />
+    <!-- Titolo -->
+
     <!-- Lista del Carrello -->
-    <Label text="Prodotti nel carrello:" />
-    <ListView fx:id="listViewCarrello" prefHeight="200" prefWidth="300" />
+    <VBox spacing="20" alignment="CENTER">
+        <Label text="Prodotti nel carrello:" style="-fx-font-size: 20px; -fx-text-fill: #34495E;" />
+        <ListView fx:id="listViewCarrello" prefHeight="200" prefWidth="400"
+                  style="-fx-background-color: #FFFFFF; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 5;" />
+    </VBox>
+    <!-- Lista del Carrello -->
 
     <!-- Totale Carrello -->
-    <Label fx:id="lblTotaleCarrello" text="Totale: €0.00" />
-
-    <!-- Pulsante per rimuovere i prodotti dal carrello -->
-    <HBox spacing="10">
-        <Button fx:id="btnRimuoviCarrello" text="Rimuovi prodotto" onAction="#handleRimuoviProdotto" />
-    </HBox>
+    <Label fx:id="lblTotaleCarrello" text="Totale: €0.00"
+           style="-fx-font-size: 20px; -fx-text-fill: #27AE60; -fx-font-weight: bold;" />
 
     <!-- Selezione Modalità di Pagamento -->
-    <Label text="Metodo di pagamento:" />
-    <HBox spacing="10">
-        <RadioButton fx:id="btnContante" text="Contante" />
-        <RadioButton fx:id="btnCartaCredito" text="Carta di credito" />
-        <RadioButton fx:id="btnBancomat" text="Bancomat" />
-    </HBox>
+    <VBox spacing="20" alignment="CENTER">
+        <Label text="Metodo di pagamento:" style="-fx-font-size: 20px; -fx-text-fill: #34495E;" />
+        <HBox spacing="15" alignment="CENTER">
+            <RadioButton fx:id="btnContanti" text="Contante"
+                         style="-fx-font-size: 20px; -fx-text-fill: #34495E;" />
+            <RadioButton fx:id="btnCarta" text="Carta di credito"
+                         style="-fx-font-size: 20px; -fx-text-fill: #34495E;" />
+            <RadioButton fx:id="btnBancomat" text="Bancomat"
+                         style="-fx-font-size: 20px; -fx-text-fill: #34495E;" />
+        </HBox>
+    </VBox>
 
     <!-- Pulsante per procedere al pagamento -->
-    <Button fx:id="btnPagamento" text="Procedi al pagamento" onAction="#handlePagamento" />
+    <Button fx:id="btnPagamento" text="Procedi al pagamento"
+            style="-fx-font-size: 20px; -fx-background-color: #2ECC71; -fx-text-fill: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10 30 10 30;" />
 </VBox>

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
@@ -15,11 +16,21 @@ import java.util.Objects;
 public class ClientController {
 
     @FXML
-    private ListView<Prodotto> listViewProdotti;  // ListView dei prodotti
+    private ListView<Prodotto> listViewProdotti,
+                               listViewCarrello;
     @FXML
-    private Button btnAggiungi, btnCarrello, btnRichiediPreventivo; // Aggiunto pulsante per il preventivo
+    private Button btnCarrello,
+                   btnRichiediPreventivo,
+                   btnRimuoviProdotto,
+                   btnPagamento;
+
     @FXML
-    private Label lblTotale;
+    private RadioButton btnContanti,
+                        btnCarta,
+                        btnBancomat;
+
+    @FXML
+    private Label lblTotaleCarrello;
 
     private ClientModel clientModel = new ClientModel();  // Model per il client
     private CarrelModel carrelModel = new CarrelModel(); // Model per il carrello
@@ -27,7 +38,6 @@ public class ClientController {
     @FXML
     public void initialize() {
         // Inizializza i pulsanti e le azioni per ogni pulsante
-        btnAggiungi.setOnAction(new AggiungiHandler());
         btnCarrello.setOnAction(new VaiAlCarrelloHandler());
         btnRichiediPreventivo.setOnAction(new VaiAlPreventivoHandler());  // Aggiunto handler per il preventivo
 
