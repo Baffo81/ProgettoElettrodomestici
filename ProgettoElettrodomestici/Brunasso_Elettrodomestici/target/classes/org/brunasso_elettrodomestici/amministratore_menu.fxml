@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Pos?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.elettrodomestici.brunasso_vittorio_elettrodomestici.AdminController"
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController"
       spacing="30" alignment="CENTER" style="-fx-background-color: #F5DEB3; -fx-font-family: 'Helvetica'">
 
     <!-- Titolo della schermata -->

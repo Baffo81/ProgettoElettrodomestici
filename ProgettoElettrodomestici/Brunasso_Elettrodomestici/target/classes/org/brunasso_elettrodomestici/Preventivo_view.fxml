@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.elettrodomestici.brunasso_vittorio_elettrodomestici.PreventivoController">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController">
     <!-- Sezione per Inserire Marca e Pezzi Mancanti -->
     <Label text="Inserisci marca e pezzi mancanti per il preventivo:" />
     <TextField fx:id="txtMarca" promptText="Marca dell'elettrodomestico"/>

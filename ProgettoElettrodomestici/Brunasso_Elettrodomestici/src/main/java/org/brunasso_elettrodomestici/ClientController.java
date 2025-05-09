@@ -40,6 +40,12 @@ public class ClientController {
         listViewProdotti.getItems().setAll(clientModel.getProdottiDisponibili());
     }
 
+    public void handleRimuoviProdotto() {
+    }
+
+    public void handlePagamento() {
+    }
+
     // Aggiungi un prodotto al carrello
     class AggiungiHandler implements EventHandler<ActionEvent> {
         public void handle(ActionEvent event) {

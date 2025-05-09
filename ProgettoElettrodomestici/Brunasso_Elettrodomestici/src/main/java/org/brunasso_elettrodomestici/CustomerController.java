@@ -118,7 +118,7 @@ public class CustomerController implements Initializable {
 
     @FXML
     private void showLoginInterface() throws IOException { // switches the interface to the login
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginInterface.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login_Interface.fxml"));
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         Stage stage = (Stage) registerUsername.getScene().getWindow();
@@ -130,7 +130,7 @@ public class CustomerController implements Initializable {
 
     @FXML
     private void showRegisterInterface() throws IOException { // switches the interface to the registration
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("RegisterInterface.fxml")); // loads the fxml containing the interface
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Register_Interface.fxml")); // loads the fxml containing the interface
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         Stage stage = (Stage) loginUsername.getScene().getWindow();

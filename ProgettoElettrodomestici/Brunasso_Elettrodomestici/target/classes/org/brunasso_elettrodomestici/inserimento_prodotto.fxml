@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.HBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.elettrodomestici.brunasso_vittorio_elettrodomestici.ProdottoController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5F5F5; -fx-font-family: 'Arial'">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5F5F5; -fx-font-family: 'Arial'">
 
     <!-- Title -->
     <Text text="Inserisci Nuovo Prodotto" style="-fx-font-size: 24px; -fx-fill: #2E8B57; -fx-font-weight: bold"/>

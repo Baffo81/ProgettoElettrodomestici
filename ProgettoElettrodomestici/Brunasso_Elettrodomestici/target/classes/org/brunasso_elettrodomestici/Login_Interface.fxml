@@ -6,38 +6,36 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="CENTER" spacing="25.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.brunasso_elettrodomestici.CustomerController"
-      style="-fx-background-color: #F5DEB3; -fx-font-family: 'Helvetica'">
+      style="-fx-background-color: #EAEDED; -fx-font-family: 'Times New Roman'">
 
-    <!-- Title -->
-    <Text text="LOGIN" style="-fx-font-size: 25px; -fx-fill: #32CD32; -fx-font-weight: bold"/>
-    <!-- Title -->
+    <!-- Titolo -->
+    <Text text="LOGIN" style="-fx-font-size: 36px; -fx-fill: #3498DB; -fx-font-weight: bold"/>
+    <!-- Titolo -->
 
-    <!-- Username and Password -->
-    <VBox spacing="15.0" alignment="CENTER">
-        <TextField fx:id="loginUsername" promptText="Username" maxWidth="280" focusTraversable="false"
-           style="-fx-font-size: 20px; -fx-background-color: #F9F6F7; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10; -fx-prompt-text-fill: #808080"/>
-        <PasswordField fx:id="loginPassword" promptText="Password" focusTraversable="false" maxWidth="280"
-           style="-fx-font-size: 20px; -fx-background-color: #F9F6F7; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10; -fx-prompt-text-fill: #808080"/>
+    <!-- Username e Password -->
+    <VBox spacing="20.0" alignment="CENTER">
+        <TextField fx:id="loginUsername" promptText="Username" maxWidth="350" focusTraversable="false"
+                   style="-fx-font-size: 20px; -fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 10; -fx-prompt-text-fill: #7F8C8D"/>
+        <PasswordField fx:id="loginPassword" promptText="Password" focusTraversable="false" maxWidth="350"
+                       style="-fx-font-size: 20px; -fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-color: #BDC3C7; -fx-border-radius: 8; -fx-padding: 10; -fx-prompt-text-fill: #7F8C8D"/>
     </VBox>
-    <!-- Username and Password -->
+    <!-- Username e Password -->
 
-    <!-- Buttons -->
-    <VBox spacing="15.0" alignment="CENTER">
+    <!-- Pulsanti -->
+    <VBox spacing="20.0" alignment="CENTER">
         <Button fx:id="loginButton" text="Accedi" onAction="#login"
-            style="-fx-font-size: 20px; -fx-background-color: #32CD32; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-text-fill: #FFFFFF"/>
+                style="-fx-font-size: 20px; -fx-background-color: #3498DB; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-text-fill: #FFFFFF; -fx-padding: 10 20 10 20"/>
         <HBox spacing="5.0" alignment="CENTER">
-            <Text text="Non hai un account?" style="-fx-font-size: 20px"/>
-            <Text fx:id="loginRegisterButton" text="Registrati" onMouseClicked="#showRegisterInterface" fill="#32CD32" style="-fx-font-size: 20px; -fx-cursor: hand;"/>
+            <Text text="Non hai un account?" style="-fx-font-size: 18px; -fx-fill: #2C3E50"/>
+            <Text fx:id="loginRegisterButton" text="Registrati" onMouseClicked="#showRegisterInterface" fill="#3498DB" style="-fx-font-size: 18px; -fx-cursor: hand; -fx-font-weight: bold"/>
         </HBox>
     </VBox>
-    <!-- Buttons -->
+    <!-- Pulsanti -->
 
-    <!-- Error Messages -->
-    <Text fx:id="loginError" visible="false" fill="red" style="-fx-font-size: 20px"/>
-    <!-- Error Messages -->
+    <!-- Messaggi di errore -->
+    <Text fx:id="loginError" visible="false" fill="red" style="-fx-font-size: 18px; -fx-font-weight: bold"/>
+    <!-- Messaggi di errore -->
 </VBox>

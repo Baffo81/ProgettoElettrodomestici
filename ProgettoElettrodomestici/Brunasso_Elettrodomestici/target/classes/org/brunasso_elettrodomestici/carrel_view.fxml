@@ -7,7 +7,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.elettrodomestici.brunasso_vittorio_elettrodomestici.CarrelloController">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.ClientController">
     <!-- Lista del Carrello -->
     <Label text="Prodotti nel carrello:" />
     <ListView fx:id="listViewCarrello" prefHeight="200" prefWidth="300" />
