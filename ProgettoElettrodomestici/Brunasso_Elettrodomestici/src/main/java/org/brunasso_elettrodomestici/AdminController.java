@@ -35,9 +35,10 @@ public class AdminController implements Initializable {
     public Text addProductError;
 
     @FXML
-    Button VisualizzaAggiungi,
+    public Button VisualizzaAggiungi,
             VisualizzaScorteRicambiPercentualeVendita,
-            addProductButton;
+            addProductButton,
+           backToAdminMenuButton;
 
     private final AdminModel model;                      // reference to Model
     public AdminController() { // constructor
@@ -52,13 +53,29 @@ public class AdminController implements Initializable {
         Stage stage = (Stage) VisualizzaAggiungi.getScene().getWindow();
         stage.setScene(scene);
         stage.setMaximized(true); // sets fullscreen
-        initializeLoginInterfaceElements(scene); // initializes interface's elements
         stage.show(); // shows the interface
     }
 
     @FXML
-    private void VisualizzaAggiungiRicambio() {
+    private void VisualizzaAggiungiRicambio() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("inserimento_prodotto.fxml"));
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent);
+        Stage stage = (Stage) VisualizzaAggiungi.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setMaximized(true); // sets fullscreen
+        stage.show(); // shows the interface
+    }
 
+    @FXML
+    private void showMenuAdministrator() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("amministratore_menu.fxml"));
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent);
+        Stage stage = (Stage) productName.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setMaximized(true); // sets fullscreen
+        stage.show(); // shows the interface
     }
 
     @FXML
@@ -70,7 +87,6 @@ public class AdminController implements Initializable {
     private void initializeLoginInterfaceElements(Scene scene) { // initializes LoginInterface's elements
         VisualizzaAggiungi = (Button) scene.lookup("#VisualizzaAggiungi");
         VisualizzaScorteRicambiPercentualeVendita = (Button) scene.lookup("#viewSparePartsButton");
-
     }
 
     @Override
@@ -79,20 +95,29 @@ public class AdminController implements Initializable {
     }
 
     public void addProductHandler() {
-        String codice = productCode.getText();
+        int codice = Integer.parseInt(productCode.getText());
         String nome = productName.getText();
         String descrizione = productDescription.getText();
         String prezzo = productPrice.getText();
         String marca = productMarca.getText();
         String categoria = productCategoria.getText();
         String quantita = productQuantity.getText();
-        String sconto = productSale.getText();
+        int sconto = Integer.parseInt(productSale.getText());
         String fornitore = productFornitore.getText();
-        if (codice.isEmpty() || nome.isEmpty() || descrizione.isEmpty() || prezzo.isEmpty() || marca.isEmpty() || categoria.isEmpty() || quantita.isEmpty() || sconto.isEmpty() || fornitore.isEmpty()) {
+        if (nome.isEmpty() || descrizione.isEmpty() || prezzo.isEmpty() || marca.isEmpty() || categoria.isEmpty() || quantita.isEmpty() || fornitore.isEmpty() || productCode.getText().isEmpty() || productSale.getText().isEmpty()) {
             addProductError.setText("Alcuni campi sono mancanti");
             addProductError.setEffect(new DropShadow());
         } else {
             model.addProduct(codice, nome, descrizione, prezzo, marca, categoria, quantita, sconto, fornitore);
+            productCode.setText("");
+            productName.setText("");
+            productDescription.setText("");
+            productPrice.setText("");
+            productMarca.setText("");
+            productCategoria.setText("");
+            productQuantity.setText("");
+            productSale.setText("");
+            productFornitore.setText("");
         }
     }
 }

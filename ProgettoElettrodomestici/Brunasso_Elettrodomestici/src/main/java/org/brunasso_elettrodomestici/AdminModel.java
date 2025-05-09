@@ -24,17 +24,17 @@ public class AdminModel {
         return instance;
     }
 
-    public void addProduct(String codice, String nome, String descrizione, String prezzo, String marca, String categoria, String quantita, String sconto, String fornitore) {
-        String query = "INSERT INTO prodotti (codice, nome, descrizione, prezzo, marca, categoria, quantita, sconto, fornitore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void addProduct(int codice, String nome, String descrizione, String prezzo, String marca, String categoria, String quantita, int sconto, String fornitore) {
+        String query = "INSERT INTO ricambi (codice, nome, descrizione, prezzo, marca, categoria, scorta, percentualesconto, fornitore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, codice);
+            stmt.setInt(1, codice);
             stmt.setString(2, nome);
             stmt.setString(3, descrizione);
             stmt.setDouble(4, Double.parseDouble(prezzo));
             stmt.setString(5, marca);
             stmt.setString(6, categoria);
             stmt.setInt(7, Integer.parseInt(quantita));
-            stmt.setDouble(8, Double.parseDouble(sconto));
+            stmt.setInt(8, sconto);
             stmt.setString(9, fornitore);
             stmt.executeUpdate();
         } catch (SQLException e) {

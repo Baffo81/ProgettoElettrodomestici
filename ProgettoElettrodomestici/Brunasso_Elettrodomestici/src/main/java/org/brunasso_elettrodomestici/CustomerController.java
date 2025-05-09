@@ -148,7 +148,6 @@ public class CustomerController implements Initializable {
         Stage stage = (Stage) loginUsername.getScene().getWindow();
         stage.setScene(scene);
         stage.setMaximized(true); // sets fullscreen
-        initializeLoginInterfaceElements(scene); // initializes interface's elements
         stage.show(); // shows the interface
     }
 
