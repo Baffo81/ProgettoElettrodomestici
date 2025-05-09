@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
 
-
+    @FXML
     public TextField productCode,
     productName,
     productDescription,
@@ -31,12 +31,18 @@ public class AdminController implements Initializable {
     productSale,
     productFornitore;
 
+    @FXML
     public Text addProductError;
 
     @FXML
     Button VisualizzaAggiungi,
             VisualizzaScorteRicambiPercentualeVendita,
             addProductButton;
+
+    private final AdminModel model;                      // reference to Model
+    public AdminController() { // constructor
+        model = AdminModel.getInstance(); // initializes the model
+    }
 
     @FXML
     private void VisualizzaMenu() throws IOException {
@@ -72,6 +78,21 @@ public class AdminController implements Initializable {
 
     }
 
-    public void addProduct() {
+    public void addProductHandler() {
+        String codice = productCode.getText();
+        String nome = productName.getText();
+        String descrizione = productDescription.getText();
+        String prezzo = productPrice.getText();
+        String marca = productMarca.getText();
+        String categoria = productCategoria.getText();
+        String quantita = productQuantity.getText();
+        String sconto = productSale.getText();
+        String fornitore = productFornitore.getText();
+        if (codice.isEmpty() || nome.isEmpty() || descrizione.isEmpty() || prezzo.isEmpty() || marca.isEmpty() || categoria.isEmpty() || quantita.isEmpty() || sconto.isEmpty() || fornitore.isEmpty()) {
+            addProductError.setText("Alcuni campi sono mancanti");
+            addProductError.setEffect(new DropShadow());
+        } else {
+            model.addProduct(codice, nome, descrizione, prezzo, marca, categoria, quantita, sconto, fornitore);
+        }
     }
 }

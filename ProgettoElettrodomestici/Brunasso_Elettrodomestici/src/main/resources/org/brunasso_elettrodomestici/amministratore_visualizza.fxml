@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.geometry.Pos?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5DEB3; -fx-font-family: 'Helvetica'">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.CustomerController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5DEB3; -fx-font-family: 'Times New Roman'">
 
     <!-- Title -->
     <Text text="Gestione Ricambi e Percentuali di Vendita" style="-fx-font-size: 30px; -fx-fill: #32CD32; -fx-font-weight: bold"/>

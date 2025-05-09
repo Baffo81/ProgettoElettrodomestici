@@ -8,14 +8,21 @@ import java.util.List;
 public class ClientModel {
 
     private Connection connection;
+    private static ClientModel instance = null;
 
     public ClientModel() {
         // Modifica la connessione al database
         try {
-             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elettrodomestici", "root", "Vito.neuer33");
+             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elettrodomestici", "root", "Gaetano22");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static ClientModel getInstance() { // returns an instance or defines a new one if not exists already
+        if(instance == null)
+            instance = new ClientModel();
+        return instance;
     }
 
     public List<Prodotto> getProdottiDisponibili() {
@@ -50,8 +57,6 @@ public class ClientModel {
             e.printStackTrace();
         }
     }
-
-
 
     public void closeConnection() {
         try {

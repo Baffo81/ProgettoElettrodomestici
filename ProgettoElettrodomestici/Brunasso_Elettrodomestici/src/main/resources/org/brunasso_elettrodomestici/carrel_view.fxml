@@ -7,7 +7,7 @@
 <?import javafx.scene.control.RadioButton?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.brunasso_elettrodomestici.ClientController"
-      alignment="CENTER" spacing="20" style="-fx-background-color: #F7F9F9; -fx-font-family: 'Arial'; -fx-padding: 20;">
+      alignment="CENTER" spacing="20" style="-fx-background-color: #F7F9F9; -fx-font-family: 'Times New Roman'; -fx-padding: 20;">
 
     <!-- Titolo -->
     <Label text="Carrello" style="-fx-font-size: 36px; -fx-text-fill: #2E86C1; -fx-font-weight: bold;" />
