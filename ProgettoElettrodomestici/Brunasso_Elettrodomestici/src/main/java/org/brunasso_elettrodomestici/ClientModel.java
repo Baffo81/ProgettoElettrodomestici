@@ -9,6 +9,8 @@ public class ClientModel {
 
     private Connection connection;
     private static ClientModel instance = null;
+    public String username; // Nome utente del cliente
+
 
     public ClientModel() {
         // Modifica la connessione al database
@@ -19,6 +21,10 @@ public class ClientModel {
         }
     }
 
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
     public static ClientModel getInstance() { // returns an instance or defines a new one if not exists already
         if(instance == null)
             instance = new ClientModel();
@@ -47,8 +53,7 @@ public class ClientModel {
     }
 
     public void aggiungiProdottoAlCarrelloNelDatabase(Prodotto prodotto) {
-        String query = "INSERT INTO carrello (utente_id, prodotto_id) VALUES (?, ?)";
-
+        String query = "INSERT INTO AGGIUNGI (utente_id, prodotto_id) VALUES (?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, 1);  // ID utente
             ps.setString(2, prodotto.getCodice());  // ID prodotto
@@ -68,3 +73,4 @@ public class ClientModel {
         }
     }
 }
+

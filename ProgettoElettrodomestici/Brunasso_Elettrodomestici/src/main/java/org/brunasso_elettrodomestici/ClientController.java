@@ -18,6 +18,7 @@ public class ClientController {
     @FXML
     private ListView<Prodotto> listViewProdotti,
                                listViewCarrello;
+
     @FXML
     private Button btnCarrello,
                    btnRichiediPreventivo,
@@ -34,13 +35,22 @@ public class ClientController {
 
     private ClientModel clientModel = new ClientModel();  // Model per il client
     private CarrelModel carrelModel = new CarrelModel(); // Model per il carrello
+    private String username; // Nome utente del cliente
+
+    public void setUsername(String username) {
+        this.username = username;
+        System.out.println("Username impostato: " + username);
+    }
+
+    public String getUsername() {
+        return username;
+    }
 
     @FXML
     public void initialize() {
         // Inizializza i pulsanti e le azioni per ogni pulsante
         btnCarrello.setOnAction(new VaiAlCarrelloHandler());
         btnRichiediPreventivo.setOnAction(new VaiAlPreventivoHandler());  // Aggiunto handler per il preventivo
-
         // Visualizza i prodotti
         aggiornaProdotti();
     }

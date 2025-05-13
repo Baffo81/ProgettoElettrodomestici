@@ -50,13 +50,14 @@ public class CustomerController implements Initializable {
     private Button loginButton,
                    registerButton;
 
+    public String globalUsername; // username dell'utente
     private final CustomerModel model;                      // reference to Model
+
 
 
     public CustomerController() { // constructor
         model = CustomerModel.getInstance();
     }
-
 
     @FXML
     private void login() { // manages customer's login
@@ -71,8 +72,7 @@ public class CustomerController implements Initializable {
                     // Se è l'amministratore, mostra l'interfaccia dell'amministratore
                     showMenuAdministrator();
                 } else {
-                    // Se è un normale utente, mostra l'interfaccia del cliente
-                    showInterfaceClient();
+                    showInterfaceClient(username);
                 }
             } else { // if the login doesn't work, shows an error message
                 loginError.setText("Credenziali errate, riprovare");
@@ -153,14 +153,19 @@ public class CustomerController implements Initializable {
 
 
     @FXML
-    private void showInterfaceClient() throws IOException {
+    private void showInterfaceClient(String username) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("client_view.fxml"));
         Parent parent = loader.load();
+
+        // Set the username
+        ClientController controller = loader.getController();
+        controller.setUsername(username);
+        System.out.println("Username passato al controller: " + username);
+
         Scene scene = new Scene(parent);
         Stage stage = (Stage) loginUsername.getScene().getWindow();
         stage.setScene(scene);
         stage.setMaximized(true); // Apre a schermo intero
-        initializeLoginInterfaceElements(scene); // Inizializza gli elementi dell'interfaccia
         stage.show(); // Mostra la finestra
     }
 

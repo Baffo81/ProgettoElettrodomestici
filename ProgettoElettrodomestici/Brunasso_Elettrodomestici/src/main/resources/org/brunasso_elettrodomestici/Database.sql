@@ -14,18 +14,9 @@ create table Ricambi (
      PercentualeSconto int
 );
 
-create table CopieRicambi (
-      Codice int,
-      NumeroRicambio int,
-      Stato varchar(5) not null,
-      constraint PK_Copie_Ricambi primary key(Codice, NumeroRicambio),
-      constraint FK_Copie_Ricambi foreign key(Codice) references Ricambi(Codice),
-      constraint CHECK_STATO check(lower(Stato) in ('nuovo', 'usato'))
-);
-
 create table Utenti (
     Username varchar(30) primary key,
-    Password varchar(255)
+    Password varchar(255) not null
 );
 
 create table Carrelli (
@@ -38,9 +29,8 @@ create table Carrelli (
 create table Aggiungi (
       IdCarrello int,
       Codice int,
-      NumeroRicambio int,
       Data date not null,
-      constraint PK_Aggiungi primary key(IdCarrello, Codice, NumeroRicambio),
+      constraint PK_Aggiungi primary key(IdCarrello, Codice),
       constraint FK1_Aggiungi foreign key(IdCarrello) references Carrelli(IdCarrello),
-      constraint FK2_Aggiungi foreign key(Codice, NumeroRicambio) references CopieRicambi(Codice, NumeroRicambio)
+      constraint FK2_Aggiungi foreign key(Codice) references Ricambi(Codice)
 );
